@@ -6,6 +6,7 @@ import random
 BIRD_IMAGES = [pygame.image.load(os.path.join('imgs','bird1.png')), pygame.image.load(os.path.join('imgs','bird2.png')),pygame.image.load(os.path.join('imgs','bird3.png'))]
 NOT_PRESSED = 0
 PRESSED = 1
+DISPLAY_WIDTH = 280
 TOP_BORDER = 0
 BASE_BORDER = 400 
 BIRD_TALLNESS = 25
@@ -22,6 +23,8 @@ class Bird:
 		self.image_count = 0
 		self.velocity = 0
 		self.gravity = 0.01
+		self.distance_traveled = 0
+		self.fitness_score = 0
 
 
 
@@ -66,3 +69,7 @@ class Bird:
 
 
 		
+	def fitness(self):
+
+		self.fitness_score += 1/280
+		#self.fitness_score =self.fitness_score / DISPLAY_WIDTH
