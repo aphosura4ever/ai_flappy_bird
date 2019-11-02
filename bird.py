@@ -73,3 +73,4 @@ class Bird:
 
 		self.fitness_score += 1/280
 		#self.fitness_score =self.fitness_score / DISPLAY_WIDTH
+		return self.fitness_score 

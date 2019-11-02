@@ -9,8 +9,7 @@ DISPLAY_HEIGHT= 500
 white = (255,255,255)
 class  Pipe:
 	
-	DISTANCE_BETWEEN_PIPES = 250
-
+	DISTANCE_BETWEEN_PIPES = 500
 
 	"""docstring for  Pipe"""
 	def __init__(self,gameDisplay):
@@ -63,7 +62,7 @@ class  Pipe:
 		if self.x0 < -40: 
 			self.x0 = self.x1
 			self.x1 = self.x2
-			self.x2 = OUT_OF_SCREEN + 2*self.DISTANCE_BETWEEN_PIPES
+			self.x2 =  3*self.DISTANCE_BETWEEN_PIPES
 			self.add_pipe()
 
 
@@ -72,7 +71,7 @@ class  Pipe:
 		
 		if (self.x0 < bird_x+35 and self.x0+50 > bird_x) and (self.pipes[0][0]+320 > bird_y or self.pipes[0][0]+320+self.pipes[0][1] < bird_y+23):
 			endGame = True 
-			self.score = 0
+			#self.score = 0
 		return endGame 
 
 	def score_board(self, bird_x, bird_y, font):
@@ -84,6 +83,6 @@ class  Pipe:
 		
 		score = font.render(str(self.score), True, white)
 		
-		self.gameDisplay.blit(score,(265,0))
+		self.gameDisplay.blit(score,(220,0))
 
 
